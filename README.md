@@ -30,10 +30,14 @@ Clone this repo and build Docker containers with docker-compose
 
 
 ```
-git@github.com:serfer2/flask-hexagonal-architecture-api.git
+git clone git@github.com:serfer2/flask-hexagonal-architecture-api.git
 cd flask-hexagonal-architecture-api
 docker-compose up -d
 ```
+Now, API is listening at localhost port 8000. Available endpoints are:
+
+ - [http://localhost:8000/acquire/pdf](http://localhost:8000/acquire/pdf)
+ - [http://localhost:8000/anonymize/txt](http://localhost:8000/anonymize/txt)
 
 ## Architecture
 
@@ -52,7 +56,7 @@ This architecture is divided in three main layers:
 
 ### Code structure
 
-Code source tree looks like this:
+Source code directory tree looks like this:
 
 ```
 .
@@ -120,6 +124,13 @@ docker-compose exec api python -m unittest discover
  - Since API is very simple, we don't have *domain services*. *Models* are close to be *DTOs*, so there's no logic to be tested. This is why there's no `test/domain/` folder.
 
  - According to the architecture schema (see image above), **integration** tests are in `test/infrastructure/test_repositories.py`.
+
+### Real test with Postman
+
+Postman is a great tool for playing with our API.    
+Here's an example on how to send files by HTTP POST method to our API endpoints:
+
+![Sending files with Postman](img/send_file.png)
 
 ## References
 
