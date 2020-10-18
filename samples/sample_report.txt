@@ -1,0 +1,8 @@
+MD: 987654
+Patient report header
+
+This patient is feeling good.
+No sickness, no bad diseases symptoms.
+All alright!
+
+A random footer

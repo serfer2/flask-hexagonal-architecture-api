@@ -1,0 +1,13 @@
+version: '3'
+services: 
+    api:
+        build: ./src/
+        volumes: 
+            - ./src/:/usr/src/app/
+        ports: 
+            - 8000:8000
+        environment:
+            DB_URI: "sqlite:////usr/src/app/tmp/api.db"
+            HOST: "0.0.0.0"
+            PORT: 8000
+            FLASK_DEBUG: 1
